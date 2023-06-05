@@ -5,13 +5,6 @@ files:
   - source: /
     destination: /var/www/html/test
 
-permissions:
-  - object: /var/www/html/test/storage
-    pattern: "**"
-    owner: ubuntu
-    group: ubuntu
-    mode: 755
-
 hooks:
   BeforeInstall:
     - location: before_install.sh
