@@ -1,0 +1,415 @@
+// Header
+.header-dashboard {
+  position: relative;
+  padding: 1rem 0;
+  z-index: 9999;
+  background-color: $cl-white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  .container {
+    @include flexbox(flex, space-between, center, nowrap);
+    .header-button-show-menu-sp {
+      margin-right: 1rem;
+      cursor: pointer;
+      @include mq_min_1024 {
+        display: none;
+      }
+    }
+    .header-logo {
+      margin-right: auto;
+      max-width: 12.5rem;
+      @include mq_min_1024 {
+        max-width: 100%;
+      }
+    }
+    .header-text {
+      @include font(1rem, 500, 1.6);
+      @include mq_min_1024 {
+        font-size: 1.8rem;
+      }
+    }
+    .header-text-gradient {
+      display: none;
+      @include mq_min_1024 {
+        display: block;
+        padding: 0.5rem 5rem;
+        @include font(1.6rem, 500, 1.8);
+        color: $cl-white;
+        background: linear-gradient(90deg, #c3d5e1, #57a1d0, #ab92bc) no-repeat;
+      }
+    }
+    .user-notify {
+      position: relative;
+      max-width: 2.5rem;
+      margin-right: 2rem;
+      cursor: pointer;
+      & > span {
+        position: absolute;
+        height: 1.4rem;
+        width: 1.4rem;
+        bottom: 0px;
+        right: -2px;
+        padding: 0.2rem;
+        border-radius: 50%;
+        font-size: 1rem;
+        color: #fff;
+        text-align: center;
+        background-color: $cl-red;
+        @include flexbox(flex, center, center, nowrap);
+      }
+      @include mq_min_1024 {
+        margin: 0 3rem;
+      }
+    }
+    .header-user {
+      position: relative;
+      @include flexbox(flex, center, center, nowrap);
+      .wrap-user {
+        @include flexbox(flex, flex-end, center, nowrap);
+        cursor: pointer;
+        .user-avatar {
+          margin-right: 0.5rem;
+          img {
+            max-width: 4.5rem;
+            min-width: 4.5rem;
+            max-height: 4.5rem;
+            min-height: 4.5rem;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+        }
+        .user-show {
+          max-width: 1.5rem;
+        }
+      }
+      .user-list-option {
+        display: none;
+        position: absolute;
+        top: 3.5rem;
+        right: -15px;
+        padding-top: 2rem;
+        @include mq_min_1024 {
+          top: 4rem;
+          right: 0;
+        }
+        ul {
+          width: 28rem;
+          text-align: center;
+          border: 1px solid $cl-gray-light;
+          background-color: $cl-white;
+          @include mq_min_1024 {
+            width: 25rem;
+          }
+          li {
+            padding: 1.5rem 0;
+            @include font(1.4rem, 400, 1.8);
+            color: $cl-gray;
+            &:not(:last-child) {
+              border-bottom: 1px solid $cl-gray-light;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Main
+.main {
+  .container.profile {
+    @include flexbox(flex, space-between, normal, nowrap);
+    @include mq_min_1024 {
+      padding: 0.5rem !important;
+      background: linear-gradient(90deg, #c3d5e1, #94d5ff, #ebceff) no-repeat;
+    }
+    .sidebar {
+      display: none;
+      width: 35rem;
+      padding: 2rem;
+      background-color: $cl-white;
+      @include mq_min_1024 {
+        display: block;
+      }
+      .sidebar-header {
+        @include flexbox(flex, space-between, center, nowrap);
+        .info-user {
+          p {
+            @include font(1.2rem, 600, 1.8);
+            @include mq_min_1024 {
+              font-size: 1.5rem;
+            }
+          }
+          span {
+            @include flexbox(flex, flex-start, center, nowrap);
+            @include font(1.2rem, 500, 1.8);
+            @include mq_min_1024 {
+              font-size: 1.5rem;
+            }
+            img {
+              margin-left: 0.5rem;
+            }
+          }
+        }
+        .img-user {
+          width: 6.2rem;
+          height: 6.2rem;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+      .sidebar-body {
+        margin-top: 2.5rem;
+        // margin-bottom: 7.7rem;
+        ul {
+          li {
+            @include flexbox(flex, space-between, center, nowrap);
+            @include font(1.4rem, 400, 2);
+            @include mq_min_1024 {
+              font-size: 1.6rem;
+            }
+            padding: 0.8rem 0;
+            cursor: pointer;
+          }
+        }
+        .text-cp {
+          position: relative;
+          margin-top: 5rem;
+          padding: 1rem 1.5rem;
+          @include font(1.4rem, 500, 1.8);
+          color: $cl-white;
+          text-align: center;
+          background: linear-gradient(90deg, #c3d5e1, #57a1d0, #ab92bc) no-repeat;
+          &::before {
+            position: absolute;
+            content: '';
+            top: -3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 2px;
+            background-color: #e2e2e2;
+          }
+        }
+      }
+    }
+    .content.user-profile {
+      width: 100%;
+      background-color: $cl-white;
+      @include mq_min_1024 {
+        width: calc((100% - 35.5rem));
+        padding: 2rem;
+      }
+      .notify-success {
+        @include font(1.4rem, 600, 1.8);
+        padding: 1rem 1.5rem;
+        color: $cl-black;
+        border: 1px solid #e2e2e2;
+        border-left: 4px solid #e4a1c5;
+      }
+      h3 {
+        margin: 2rem auto 4rem;
+        padding: 0.5rem 2rem;
+        @include font(1.8rem, 400, 1.8);
+        color: $cl-white;
+        background: linear-gradient(90deg, #e4a1c5, #dbe9f4) no-repeat;
+        @include mq_min_1024 {
+          margin-top: 4rem;
+        }
+      }
+      & > img {
+        width: 15rem;
+        height: 15rem;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 2rem auto;
+        @include mq_min_1024 {
+          width: 18rem;
+          height: 18rem;
+        }
+      }
+      form {
+        .input-group {
+          height: 3.5rem;
+          .form-edit {
+            @include flexbox(flex, space-around, normal, nowrap);
+            div {
+              width: calc((100% / 2) - 3rem);
+              @include flexbox(flex, space-between, center, nowrap);
+              span {
+                margin-right: 1rem;
+                @include font(1.4rem, 400, 1.8);
+                text-overflow: ellipsis;
+                // overflow: hidden;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                white-space: nowrap;
+              }
+              & > input {
+                max-width: 21rem;
+                border-radius: 6px;
+              }
+            }
+          }
+          .input-group-text {
+            position: relative;
+            width: 15rem;
+            height: 4rem;
+            @include font(1.4rem, 400, 1.8);
+            text-align: center;
+            background-color: #dfe7f2;
+            @include mq_min_1024 {
+              width: 18rem;
+            }
+          }
+          .form-upload-image {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 19rem;
+            & > img {
+              width: 18rem;
+              height: 18rem;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+            .btn-control {
+              margin-top: 1.5rem;
+              @include flexbox(flex, flex-start, center, nowrap);
+              .btn_upload {
+                display: inline-block;
+                overflow: hidden;
+                position: relative;
+                color: #212529;
+                background-color: $cl-white;
+                border: 1px solid #ced4da;
+                padding: .8rem 1.5rem;
+                border-radius: 6px;
+                // cursor: pointer;
+                input[type='file'] {
+                  height: 100%;
+                  position: absolute;
+                  filter: alpha(opacity=1);
+                  -moz-opacity: 0;
+                  opacity: 0;
+                  cursor: pointer;
+                  // cursor: inherit;
+                }
+              }
+              .btn-delete-image {
+                margin-left: 2rem;
+                width: 1.8rem;
+                cursor: pointer;
+              }
+            }
+          }
+          .required {
+            &::after {
+              position: absolute;
+              content: '必須';
+              top: 50%;
+              right: 5px;
+              width: 35px;
+              transform: translateY(-50%);
+              font-size: 1rem;
+              color: #ffffff;
+              background-color: #f14a4a;
+            }
+          }
+          p {
+            height: 4rem;
+            @include font(1.4rem, 400, 1.8);
+            .btn-edit-profile {
+              width: 14rem;
+              margin-left: auto;
+              padding: 0 1rem;
+              @include font(1.2rem, 500, 1.8);
+              text-align: center;
+              border: 1px solid #a8a7a7;
+              color: $cl-white;
+              background: linear-gradient(90deg, #0d85c7, #bf5da0) no-repeat;
+            }
+          }
+        }
+      }
+      .list-btn {
+        margin-top: 4rem;
+        @include flexbox(flex, center, normal, nowrap);
+        @include mq_min_1024 {
+          justify-content: flex-end;
+        }
+        .btn-child {
+          width: 11rem;
+          padding: 0.5rem 1rem;
+          @include font(1.4rem, 500, 1.8);
+          text-align: center;
+          border: 1px solid #a8a7a7;
+          background-color: $cl-white;
+          &:first-child {
+            color: $cl-black;
+          }
+          &:last-child {
+            margin-left: 1rem;
+            color: $cl-white;
+            background: linear-gradient(90deg, #0d85c7, #bf5da0) no-repeat;
+          }
+        }
+      }
+    }
+
+    .modal-logout {
+      padding: 0 1rem;
+      .modal-logout-header {
+        padding: 1.2rem 0;
+        text-align: center;
+        @include font(1.6rem, 500, 1.6);
+        color: $cl-white;
+        background: linear-gradient(90deg, #e4a1c5, #dbe9f4) no-repeat;
+        @include mq_min_1024 {
+          font-size: 1.8rem;
+        }
+      }
+      .modal-body {
+        p {
+          margin-top: 6rem;
+          @include font(1.2rem, 400, 1.6);
+          color: $cl-gray;
+          text-align: center;
+          @include mq_min_1024 {
+            font-size: 1.6rem;
+          }
+        }
+        .list-btn-modal-logut {
+          @include flexbox(flex, center, normal, nowrap);
+          margin: 3.5rem auto 10rem;
+          .btn-back,
+          .btn-logout {
+            width: 12.5rem;
+            padding: 0.5rem 2rem;
+            @include font(1.2rem, 500, 1.6);
+            color: $cl-gray;
+            text-align: center;
+            border-radius: 20px;
+            border: 1px solid #deecf6;
+            background: $cl-white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            @include mq_min_1024 {
+              width: 16.5rem;
+              font-size: 1.6rem;
+            }
+            &:hover {
+              color: $cl-white;
+              border: 1px solid $cl-white;
+              background: linear-gradient(90deg, #0d85c7, #bf5da0) no-repeat;
+            }
+          }
+          .btn-logout {
+            margin-left: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Footer

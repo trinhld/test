@@ -1,0 +1,57 @@
+<?php
+
+return [
+    'store' => [
+        'success' => 'プロファイルの更新が成功しました。',
+        'error' => 'プロファイルの更新に失敗しました。',
+        'warning' => '管理者アカウントは削除できません。',
+    ],
+    'edit' => [
+        'home' => 'ホーム',
+        'function1' => '仮機能1',
+        'function2' => '仮機能2',
+        'function3' => '仮機能3',
+        'function4' => '仮機能4',
+        'function5' => '仮機能5',
+        'function6' => 'お問い合わせ',
+        'title_footer' => 'CPバナーなどを貼ると良い',
+        'profile' => 'プロフィール',
+        'name' => '名前',
+        'furigana_name' => '名前（ふりがな）',
+        'furigana_last_name' => 'せい',
+        'furigana_first_name' => 'めい',
+        'furigana_last_name_example' => 'やまだ',
+        'furigana_first_name_example' => 'たろう',
+        'date_of_birth' => '生年月日',
+        'email' => 'メールアドレス',
+        'phone' => '電話番号',
+        'avatar' => 'プロフィール写真',
+        'back' => '戻る',
+        'edit' => '編集',
+        'update' => '保存',
+        'last_name' => '姓',
+        'first_name' => '名',
+        'last_name_example' => '山田',
+        'first_name_example' => '太郎',
+        'logout' => 'ログアウト',
+        'confirm' => '本当にログアウトしますか？',
+        'email_change' => 'メールアドレス変更？',
+        'upload_image' => '画像アップロード？',
+        'success' => 'プロファイルの更新が成功しました。',
+        'error' => 'プロファイルの更新に失敗しました。',
+        'warning' => '管理者アカウントは削除できません。',
+    ],
+    'update' => [
+        'email' => [
+            'title' => 'メールアドレス変更',
+            'input' => 'メールアドレス確認',
+            'button' => 'メールを承認する',
+            'text_footer' => '入力いただいたメールアドレス宛に確認コードが送信されます。メールが届くメールアドレスをご入力ください。',
+            'text_footer_a' => 'ホームへ戻る',
+            'text_input' => '下記のメールアドレスに送信された確認コードを入力してください。',
+            'text_footer_confirm' => 'メールが届かない場合は、',
+            'text_footer_confirm_a' => '再度登録、',
+            'text_footer_confirm_end' => 'しなおしてください。',
+        ]
+    ]
+];

@@ -1,0 +1,36 @@
+@mixin font($size, $weight, $lineHeight) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+
+@mixin flexbox($display, $justify, $align, $wrap) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin mq_min_576 {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin mq_min_768 {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mq_min_1024 {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mq_min_1200 {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}

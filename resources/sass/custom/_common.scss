@@ -1,0 +1,21 @@
+input {
+  font-size: 1.4rem !important;
+}
+.text-inline {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.h-240 {
+  height: 24rem !important;
+}
+
+.file-field input[type=file]  {
+  text-indent: -999px;
+}
+
+.file-field .btn, .file-field .btn-large {
+  position: relative;
+  overflow: hidden;
+}
