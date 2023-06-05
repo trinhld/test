@@ -4,3 +4,21 @@ os: linux
 files:
   - source: /
     destination: /var/www/html/test
+
+permissions:
+  - object: /var/www/html/test/storage
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
+    mode: 755
+
+hooks:
+  BeforeInstall:
+    - location: before_install.sh
+      timeout: 300
+      runas: root
+
+  AfterInstall:
+    - location: after_install.sh
+      timeout: 300
+      runas: root
