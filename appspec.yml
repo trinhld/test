@@ -2,11 +2,5 @@ version: 0.0
 os: linux
 
 files:
-  - source: /index.html
-    destination: /var/www/html
-
-#hooks:
-#  BeforeInstall:
-#    - location: clear_cache.sh
-#      timeout: 300
-#      runas: ubuntu
+  - source: /
+    destination: /var/www/html/test
